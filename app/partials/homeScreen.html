@@ -1,0 +1,26 @@
+<div ng-include="'templates/navigation.html'"></div>
+
+<div class="main">
+    <div ng-if="!isLogged">
+        <div class="row home-buttons-container">
+            <div class="col-md-12">
+                <div class="center col-lg-6">
+                    <a href="#">
+                        <button type="button" class="btn btn-lg btn-warning home-btn">
+                            <a href="#/login">Login</a>
+                        </button>
+                    </a>
+                </div>
+                <div class="center col-lg-6">
+                    <a href="#">
+                        <button type="button" class="btn btn-lg btn-danger home-btn">
+                            <a href="#/register">Register</a>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-include="'templates/newsFeed.html'" ng-if="isLogged"></div>
