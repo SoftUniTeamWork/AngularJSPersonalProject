@@ -6,7 +6,7 @@ app.factory('authenticationService', function($http, baseServiceUrl){
 
     var serviceUrl = baseServiceUrl + '/users';
 
-    service.Login = function (loginData, success, error) {
+    service.login = function (loginData, success, error) {
         $http.post(serviceUrl + '/login', loginData)
             .success(function (data, status, headers, config) {
                 success(data);
@@ -20,7 +20,7 @@ app.factory('authenticationService', function($http, baseServiceUrl){
             }).error(error);
     };
 
-    service.Logout = function (success, error) {
+    service.logout = function (success, error) {
         $http.post(serviceUrl + '/logout')
             .success(function (data, status, headers, config) {
                 success(data);

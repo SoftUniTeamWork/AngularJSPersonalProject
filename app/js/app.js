@@ -5,14 +5,18 @@ app.constant('baseServiceUrl', 'http://softuni-social-network.azurewebsites.net/
 app.config(function($routeProvider){
     $routeProvider
         .when('/', {
-            templateUrl: 'partials/homeScreen.html',
-            controller: 'MainController'
+            templateUrl: 'templates/homeScreen.html',
+            controller: 'authenticationController'
         }).when('/login', {
-            templateUrl: 'partials/login.html',
-            controller: 'authenticationController',
-            resolve: {
-                factory: redirectToHomeIfLogged
-            }
+            templateUrl: 'templates/login.html',
+            controller: 'authenticationController'
         })
 
 });
+
+app.run(function($rootscope, $location, authenctication){
+    $rootScope.$on("$routeChangeStart", function() {
+
+    });
+})
+
